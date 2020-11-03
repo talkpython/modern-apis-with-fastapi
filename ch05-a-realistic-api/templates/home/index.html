@@ -17,9 +17,9 @@
     <ul>
         <li>
             <strong>Current weather in a city</strong><br>
-            <a href="/api/weather?city=portland&state=OR&country=US&units=imperial"
+            <a href="/api/weather/portland?state=OR&country=US&units=imperial"
                target="_blank"
-            ><strong>GET /api/weather/?city={city}&country={country}</strong></a><br>
+            ><strong>GET /api/weather/{city}?country={country}&state={state}</strong></a><br>
             <br>
             <div style="font-size: 12px;">
                 <strong>Parameters</strong>
@@ -38,7 +38,7 @@
 
                 <strong>Response JSON</strong>
                 <ul>
-                    <li>Click <a href="/api/weather?city=portland&state=OR&country=US&units=imperial"
+                    <li>Click <a href="/api/weather/portland?state=OR&country=US&units=imperial"
                                  target="_blank"
                     >the link above</a> to see example output.
                     </li>
@@ -48,11 +48,6 @@
     </ul>
     </p>
 
-    <p class="disclaimer">
-        Note: This service has limited data. It is for educational purposes only. Other uses are strictly forbidden.
-        If you need a proper weather API, <a href="https://openweathermap.org/api" target="_blank"
-                                             referrerpolicy="no-referrer">openweathermap.org</a> has a great free tier.
-    </p>
     </div>
 
 {% endblock %}
