@@ -1,0 +1,33 @@
+.request {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-weight: bold;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.get {
+    color: #2b542c;
+    background-color: #beffbd;
+}
+
+.post {
+    color: #ae5900;
+    background-color: #ffc79d;
+}
+
+.response_formats span {
+    font-weight: bold;
+    color: darkred;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+pre {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}

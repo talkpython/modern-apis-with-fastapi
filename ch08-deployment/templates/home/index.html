@@ -1,0 +1,64 @@
+{% extends "shared/layout.html" %}
+
+{% block content %}
+
+    <img src="/static/img/cloud.png" style="float: left; max-width: 48px; margin-right: 20px;" alt="">
+
+    <h1><span class="font-semi-bold">Weather Service</span> <span class="smaller">A RESTful weather service</span>
+    </h1>
+
+    <div style="clear:both;"></div>
+    <br>
+    <br>
+    <p class="lead">
+        The <a href="https://training.talkpython.fm/">Talk Python</a> weather service.<br>
+        <br>
+        <strong>Endpoints</strong>
+    <ul>
+        <li>
+            <strong>Current weather in a city</strong><br>
+            <a href="/api/weather/portland?state=OR&country=US&units=imperial"
+               target="_blank"
+            ><strong>GET /api/weather/{city}?country={country}&state={state}</strong></a><br>
+            <br>
+            <div style="font-size: 12px;">
+                <strong>Parameters</strong>
+                <ul>
+                    <li><strong>Required</strong>: <code>city={city}</code> - the city you want to get the weather at.
+                    </li>
+                    <li>Optional: <code>state={state}</code> - the state of the city (US only, two letter
+                        abbreviations).
+                    </li>
+                    <li>Optional: <code>country={country}</code> - country, US if none specific (two letter
+                        abbreviations).
+                    </li>
+                    <li>Optional: <code>units={units}</code> - units: {metric, imperial, standard}, defaults to metric.
+                    </li>
+                </ul>
+
+                <strong>Response JSON</strong>
+                <ul>
+                    <li>Click <a href="/api/weather/portland?state=OR&country=US&units=imperial"
+                                 target="_blank"
+                    >the link above</a> to see example output.
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    </p>
+
+    {% if events %}
+    <div>
+        <h2>Recent weather events</h2>
+        <ul>
+            {% for e in events %}
+            <li> {{ e.location.city }}, {{ e.location.country }}: {{ e.description }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    </div>
+
+{% endblock %}
