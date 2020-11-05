@@ -42,6 +42,7 @@ def configure_fake_data():
     # We have /api/reports but until you submit new data each run, it's missing
     # So this will give us something to start from.
     loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
 
     loc = Location(city="Portland", state="OR", country="US")
     asyncio.run(report_service.add_report("Misty sunrise today, beautiful!", loc))
