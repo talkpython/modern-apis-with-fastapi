@@ -20,13 +20,6 @@ ufw allow 80
 ufw allow 443
 ufw enable
 
-# Basic git setup
-git config --global credential.helper cache
-git config --global credential.helper 'cache --timeout=720000'
-
-# Be sure to put your info here:
-git config --global user.email "you@email.com"
-git config --global user.name "Your name"
 
 apt install acl -y
 useradd -M apiuser
@@ -47,7 +40,7 @@ cd /apps
 cd /apps
 python3 -m venv venv
 source /apps/venv/bin/activate
-pip install --upgrade pip setuptools
+pip install --upgrade pip setuptools wheel
 pip install --upgrade httpie glances
 pip install --upgrade gunicorn uvloop httptools
 
