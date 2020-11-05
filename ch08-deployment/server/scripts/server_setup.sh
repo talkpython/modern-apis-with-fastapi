@@ -74,5 +74,5 @@ service nginx restart
 # https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
 
 add-apt-repository ppa:certbot/certbot
-apt install python-certbot-nginx
+apt install python3-certbot-nginx
 certbot --nginx -d weatherapi.talkpython.com
