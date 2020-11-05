@@ -49,7 +49,7 @@ python3 -m venv venv
 source /apps/venv/bin/activate
 pip install --upgrade pip setuptools
 pip install --upgrade httpie glances
-pip install --upgrade gunicorn
+pip install --upgrade gunicorn uvloop httptools
 
 # clone the repo:
 cd /apps

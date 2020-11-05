@@ -41,9 +41,10 @@ def configure_fake_data():
     # This was added to make it easier to test the weather event reporting
     # We have /api/reports but until you submit new data each run, it's missing
     # So this will give us something to start from.
-    loc = Location(city="Portland", state="OR", country="US")
-    asyncio.run(report_service.add_report("Misty sunrise today, beautiful!", loc))
-    asyncio.run(report_service.add_report("Clouds over downtown.", loc))
+    # loc = Location(city="Portland", state="OR", country="US")
+    # asyncio.run(report_service.add_report("Misty sunrise today, beautiful!", loc))
+    # asyncio.run(report_service.add_report("Clouds over downtown.", loc))
+    pass
 
 
 if __name__ == '__main__':
