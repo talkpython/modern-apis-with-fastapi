@@ -1,0 +1,26 @@
+server {
+    listen 80;
+    server_name weatherapi.talkpython.com 164.90.148.101;
+    server_tokens off;
+    charset utf-8;
+
+    location /static {
+        gzip            on;
+        gzip_buffers    8 256k;
+
+        alias /apps/app_repo/ch08-deployment/static;
+        expires 365d;
+    }
+    location / {
+        try_files $uri @yourapplication;
+    }
+    location @yourapplication {
+        gzip            on;
+        gzip_buffers    8 256k;
+
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Protocol $scheme;
+    }
+}
