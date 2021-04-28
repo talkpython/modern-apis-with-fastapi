@@ -24,7 +24,6 @@ ufw enable
 apt install acl -y
 useradd -M apiuser
 usermod -L apiuser
-setfacl -m u:apiuser:rwx /apps/logs/weather_api
 
 
 # Web app file structure
@@ -34,7 +33,8 @@ mkdir /apps/logs
 mkdir /apps/logs/weather_api
 mkdir /apps/logs/weather_api/app_log
 # chmod 777 /apps/logs/weather_api
-cd /apps
+setfacl -m u:apiuser:rwx /apps/logs/weather_api
+# cd /apps
 
 # Create a virtual env for the app.
 cd /apps
