@@ -40,4 +40,7 @@ def calculate(x: int, y: int, z: Optional[int] = None):
     }
 
 
+# uvicorn was updated, and it's type definitions don't match FastAPI,
+# but the server and code still work fine. So ignore PyCharm's warning:
+# noinspection PyTypeChecker
 uvicorn.run(api, port=8000, host="127.0.0.1")
