@@ -16,7 +16,7 @@ async def get_html(episode_number: int) -> str:
     url = f'https://talkpython.fm/{episode_number}'
 
     async with httpx.AsyncClient() as client:
-        resp = await client.get(url)
+        resp = await client.get(url, follow_redirects=True)
         resp.raise_for_status()
 
         return resp.text
