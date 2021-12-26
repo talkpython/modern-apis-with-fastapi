@@ -128,3 +128,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 settings.json
+.idea/.gitignore
+.idea/fastapi-course.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
