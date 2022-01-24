@@ -57,7 +57,7 @@ class Order:
         return isinstance(other, Order) and self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        return isinstance(other, Order) and self.__dict__ == other.__dict__
+        return isinstance(other, Order) and self.__dict__ != other.__dict__
 
 
 o = Order(**order_json)
