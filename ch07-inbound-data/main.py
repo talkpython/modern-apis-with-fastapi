@@ -41,15 +41,10 @@ def configure_fake_data():
     # This was added to make it easier to test the weather event reporting
     # We have /api/reports but until you submit new data each run, it's missing
     # So this will give us something to start from.
-    loop = None
-    try:
-        loop = asyncio.get_running_loop()
-        print("got loop!", loop)
-    except RuntimeError:
-        pass  # Boo, why can't I just get nothing back?
 
-    if not loop:
-        loop = asyncio.get_event_loop()
+    # Changed this from the video due to changes in Python 3.10:
+    # DeprecationWarning: There is no current event loop, loop = asyncio.get_event_loop()
+    loop = asyncio.new_event_loop()
 
     try:
         loc = Location(city="Portland", state="OR", country="US")
