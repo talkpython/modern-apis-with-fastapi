@@ -1,5 +1,4 @@
 import datetime
-from typing import List
 
 from dateutil.parser import parse
 
@@ -14,7 +13,7 @@ order_json = {
 # class Order:
 #
 #     def __init__(self, item_id: int, created_date: datetime.datetime,
-#                  pages_visited: List[int], price: float):
+#                  pages_visited: list[int], price: float):
 #         self.item_id = item_id
 #         self.created_date = created_date
 #         self.pages_visited = pages_visited
@@ -22,6 +21,7 @@ order_json = {
 #
 #     def __str__(self):
 #         return str(self.__dict__)
+
 
 class Order:
 
