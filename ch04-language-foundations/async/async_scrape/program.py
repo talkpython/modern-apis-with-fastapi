@@ -5,10 +5,6 @@ import httpx
 import bs4
 from colorama import Fore
 
-# Older versions of python require calling loop.create_task() rather than on asyncio.
-# Make this available more easily.
-global loop
-
 
 async def get_html(episode_number: int) -> str:
     print(Fore.YELLOW + f"Getting HTML for episode {episode_number}", flush=True)
@@ -35,9 +31,9 @@ def get_title(html: str, episode_number: int) -> str:
 def main():
     t0 = datetime.datetime.now()
 
-    global loop
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(get_title_range())
+    # Changed this line from the video due to changes in Python 3.10:
+    # DeprecationWarning: There is no current event loop, loop = asyncio.get_event_loop()
+    asyncio.run(get_title_range())
 
     dt = datetime.datetime.now() - t0
     print(f"Done in {dt.total_seconds():.2f} sec.")
@@ -56,7 +52,7 @@ async def get_title_range():
 
     tasks = []
     for n in range(270, 280):
-        tasks.append((n, loop.create_task(get_html(n))))
+        tasks.append((n, asyncio.create_task(get_html(n))))
 
     for n, t in tasks:
         html = await t
