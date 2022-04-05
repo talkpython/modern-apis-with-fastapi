@@ -26,7 +26,7 @@ def configure_api_keys():
         print(f"WARNING: {file} file not found, you cannot continue, please see settings_template.json")
         raise Exception("settings.json file not found, you cannot continue, please see settings_template.json")
 
-    with open('settings.json') as fin:
+    with open(file) as fin:
         settings = json.load(fin)
         openweather_service.api_key = settings.get('api_key')
 
