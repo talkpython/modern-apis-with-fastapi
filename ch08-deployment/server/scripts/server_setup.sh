@@ -6,7 +6,7 @@ apt update
 apt upgrade -y
 
 apt install zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install some OS dependencies:
 sudo apt-get install -y -q build-essential git unzip zip nload tree
