@@ -22,20 +22,17 @@ def get_weather(city: str, state: Optional[str], country: str, units: str) -> Op
 
 def set_weather(city: str, state: str, country: str, units: str, value: dict):
     key = __create_key(city, state, country, units)
-    data = {
-        'time': datetime.datetime.now(),
-        'value': value
-    }
+    data = {'time': datetime.datetime.now(), 'value': value}
     __cache[key] = data
     __clean_out_of_date()
 
 
 def __create_key(city: str, state: str, country: str, units: str) -> Tuple[str, str, str, str]:
     if not city or not country or not units:
-        raise Exception("City, country, and units are required")
+        raise Exception('City, country, and units are required')
 
     if not state:
-        state = ""
+        state = ''
 
     return city.strip().lower(), state.strip().lower(), country.strip().lower(), units.strip().lower()
 

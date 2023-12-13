@@ -20,8 +20,8 @@ def configure():
 def configure_api_keys():
     file = Path('settings.json').absolute()
     if not file.exists():
-        print(f"WARNING: {file} file not found, you cannot continue, please see settings_template.json")
-        raise Exception("settings.json file not found, you cannot continue, please see settings_template.json")
+        print(f'WARNING: {file} file not found, you cannot continue, please see settings_template.json')
+        raise Exception('settings.json file not found, you cannot continue, please see settings_template.json')
 
     with open(file) as fin:
         settings = json.load(fin)

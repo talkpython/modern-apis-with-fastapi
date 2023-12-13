@@ -2,7 +2,7 @@ import requests
 
 
 def main():
-    choice = input("[R]eport weather or [s]ee reports? ")
+    choice = input('[R]eport weather or [s]ee reports? ')
     while choice:
         if choice.lower().strip() == 'r':
             report_event()
@@ -11,21 +11,16 @@ def main():
         else:
             print(f"Don't know what to do with {choice}.")
 
-        choice = input("[R]eport weather or [s]ee reports? ")
+        choice = input('[R]eport weather or [s]ee reports? ')
 
 
 def report_event():
-    desc = input("What is happening now? ")
-    city = input("What city? ")
+    desc = input('What is happening now? ')
+    city = input('What city? ')
 
-    data = {
-        "description": desc,
-        "location": {
-            "city": city
-        }
-    }
+    data = {'description': desc, 'location': {'city': city}}
 
-    url = "http://127.0.0.1:8000/api/reports"
+    url = 'http://127.0.0.1:8000/api/reports'
     resp = requests.post(url, json=data)
     resp.raise_for_status()
 
@@ -34,7 +29,7 @@ def report_event():
 
 
 def see_events():
-    url = "http://127.0.0.1:8000/api/reports"
+    url = 'http://127.0.0.1:8000/api/reports'
     resp = requests.get(url)
     resp.raise_for_status()
 

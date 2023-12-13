@@ -34,23 +34,24 @@ async def get_report_async(city: str, state: Optional[str], country: str, units:
     return forecast
 
 
-def validate_units(city: str, state: Optional[str], country: Optional[str], units: str) -> \
-        Tuple[str, Optional[str], str, str]:
+def validate_units(
+    city: str, state: Optional[str], country: Optional[str], units: str
+) -> Tuple[str, Optional[str], str, str]:
     city = city.lower().strip()
     if not country:
-        country = "us"
+        country = 'us'
     else:
         country = country.lower().strip()
 
     if len(country) != 2:
-        error = f"Invalid country: {country}. It must be a two letter abbreviation such as US or GB."
+        error = f'Invalid country: {country}. It must be a two letter abbreviation such as US or GB.'
         raise ValidationError(status_code=400, error_msg=error)
 
     if state:
         state = state.strip().lower()
 
     if state and len(state) != 2:
-        error = f"Invalid state: {state}. It must be a two letter abbreviation such as CA or KS (use for US only)."
+        error = f'Invalid state: {state}. It must be a two letter abbreviation such as CA or KS (use for US only).'
         raise ValidationError(status_code=400, error_msg=error)
 
     if units:

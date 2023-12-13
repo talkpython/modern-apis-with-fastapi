@@ -23,8 +23,8 @@ def configure():
 def configure_api_keys():
     file = Path('settings.json').absolute()
     if not file.exists():
-        print(f"WARNING: {file} file not found, you cannot continue, please see settings_template.json")
-        raise Exception("settings.json file not found, you cannot continue, please see settings_template.json")
+        print(f'WARNING: {file} file not found, you cannot continue, please see settings_template.json')
+        raise Exception('settings.json file not found, you cannot continue, please see settings_template.json')
 
     with open(file) as fin:
         settings = json.load(fin)
@@ -47,14 +47,16 @@ def configure_fake_data():
     loop = asyncio.new_event_loop()
 
     try:
-        loc = Location(city="Portland", state="OR", country="US")
-        loop.run_until_complete(report_service.add_report("Misty sunrise today, beautiful!", loc))
-        loop.run_until_complete(report_service.add_report("Clouds over downtown.", loc))
+        loc = Location(city='Portland', state='OR', country='US')
+        loop.run_until_complete(report_service.add_report('Misty sunrise today, beautiful!', loc))
+        loop.run_until_complete(report_service.add_report('Clouds over downtown.', loc))
     except RuntimeError:
-        print("Note: Could not import starter date, this fails on some systems and "
-              "some ways of running the app under uvicorn.")
-        print("Fake starter data will no appear on home page.")
-        print("Once you add data with the client, it will appear properly.")
+        print(
+            'Note: Could not import starter date, this fails on some systems and '
+            'some ways of running the app under uvicorn.'
+        )
+        print('Fake starter data will no appear on home page.')
+        print('Once you add data with the client, it will appear properly.')
 
 
 if __name__ == '__main__':
