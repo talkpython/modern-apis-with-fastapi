@@ -30,6 +30,8 @@ h11==0.14.0
     #   uvicorn
 httpcore==1.0.2
     # via httpx
+httptools==0.6.1
+    # via -r requirements.piptools
 httpx==0.25.2
     # via -r requirements.piptools
 idna==3.6
@@ -61,4 +63,6 @@ typing-extensions==4.9.0
 urllib3==2.1.0
     # via requests
 uvicorn==0.24.0.post1
+    # via -r requirements.piptools
+uvloop==0.19.0
     # via -r requirements.piptools
