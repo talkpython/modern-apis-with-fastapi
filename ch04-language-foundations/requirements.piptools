@@ -1,2 +1,6 @@
+requests
+httpx
+bs4
+colorama
 python-dateutil
 pydantic

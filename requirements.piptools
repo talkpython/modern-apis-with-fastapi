@@ -1,3 +1,10 @@
+##### foundations #####
+requests
+httpx
+bs4
+colorama
+
+##### fastapi #####
 fastapi
 uvicorn
 httpx
